@@ -34,7 +34,7 @@ public class Resource {
     public void setName(String name) {
         this.name = name;
     }
-
+    
     public List<Field> getFields() {
         return fields;
     }

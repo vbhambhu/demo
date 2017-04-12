@@ -11,26 +11,12 @@ import java.util.List;
  */
 public class BookingForm {
 
-    private String name;
+    private String resource_id;
+
     private List<Resource> resources = new ArrayList<>();
     private List<Project> projects = new ArrayList<>();
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    private Date bookingDate = new Date();
-
-    private String fromTime;
-    private String toTime;
-    //private Repeat repeat;
-
-    private List<Field> fields = new ArrayList<>();
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    private BookingTime bookingTime;
 
     public List<Resource> getResources() {
         return resources;
@@ -48,35 +34,11 @@ public class BookingForm {
         this.projects = projects;
     }
 
-    public Date getBookingDate() {
-        return bookingDate;
+    public String getResource_id() {
+        return resource_id;
     }
 
-    public void setBookingDate(Date bookingDate) {
-        this.bookingDate = bookingDate;
-    }
-
-    public String getFromTime() {
-        return fromTime;
-    }
-
-    public void setFromTime(String fromTime) {
-        this.fromTime = fromTime;
-    }
-
-    public String getToTime() {
-        return toTime;
-    }
-
-    public void setToTime(String toTime) {
-        this.toTime = toTime;
-    }
-
-    public List<Field> getFields() {
-        return fields;
-    }
-
-    public void setFields(List<Field> fields) {
-        this.fields = fields;
+    public void setResource_id(String resource_id) {
+        this.resource_id = resource_id;
     }
 }
