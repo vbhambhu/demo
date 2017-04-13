@@ -1,8 +1,8 @@
 package com.example;
 
-import com.example.Entities.Project;
-import com.example.Entities.Resource;
-import com.example.Entities.User;
+import com.example.entity.Project;
+import com.example.entity.Resource;
+import com.example.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.stereotype.Controller;

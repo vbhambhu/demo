@@ -1,4 +1,4 @@
-package com.example.Entities;
+package com.example.entity;
 
 import org.hibernate.validator.constraints.Email;
 import org.springframework.data.annotation.Id;
@@ -9,7 +9,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
