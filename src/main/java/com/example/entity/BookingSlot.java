@@ -1,30 +1,32 @@
 package com.example.entity;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  * Created by vkumar on 13/04/2017.
  */
 public class BookingSlot {
 
-    private String day;
+    private String from;
 
-    private List<BookingTime> bookingTimes = new ArrayList<>();
+    private String to;
 
-    public String getDay() {
-        return day;
+    public String getFrom() {
+        return from;
     }
 
-    public void setDay(String day) {
-        this.day = day;
+    public void setFrom(String from) {
+        this.from = from;
     }
 
-    public List<BookingTime> getBookingTimes() {
-        return bookingTimes;
+    public String getTo() {
+        return to;
     }
 
-    public void setBookingTimes(List<BookingTime> bookingTimes) {
-        this.bookingTimes = bookingTimes;
+    public void setTo(String to) {
+        this.to = to;
     }
+
+
+
 }

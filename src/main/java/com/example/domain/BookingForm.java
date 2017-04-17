@@ -11,8 +11,18 @@ import java.util.List;
  */
 public class BookingForm {
 
+    private Resource selectedResource;
+
     private List<Resource> resources = new ArrayList<>();
     private List<Project> projects = new ArrayList<>();
+
+    public Resource getSelectedResource() {
+        return selectedResource;
+    }
+
+    public void setSelectedResource(Resource selectedResource) {
+        this.selectedResource = selectedResource;
+    }
 
     public List<Resource> getResources() {
         return resources;

@@ -9,20 +9,9 @@ import java.util.Date;
  */
 public class BookingTime {
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    private Date date;
-
     private String from;
 
     private String to;
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
 
     public String getFrom() {
         return from;
@@ -39,4 +28,5 @@ public class BookingTime {
     public void setTo(String to) {
         this.to = to;
     }
+
 }

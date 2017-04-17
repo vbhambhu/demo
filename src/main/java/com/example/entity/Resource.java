@@ -7,6 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by vkumar on 12/04/2017.
@@ -23,9 +24,10 @@ public class Resource {
 
     private Boolean slotRequired = false;
 
-    private List<BookingSlot> availableSlots = new ArrayList<>();
+    private Map<String, List<BookingSlot>> availableSlots;
 
-    private List<BookingSlot> unAvailableSlots = new ArrayList<>();
+    private Map<String, List<BookingSlot>> unAvailableSlots;
+
 
     private List<Field> fields = new ArrayList<>();
 
@@ -80,19 +82,19 @@ public class Resource {
         this.slotRequired = slotRequired;
     }
 
-    public List<BookingSlot> getAvailableSlots() {
+    public Map<String, List<BookingSlot>> getAvailableSlots() {
         return availableSlots;
     }
 
-    public void setAvailableSlots(List<BookingSlot> availableSlots) {
+    public void setAvailableSlots(Map<String, List<BookingSlot>> availableSlots) {
         this.availableSlots = availableSlots;
     }
 
-    public List<BookingSlot> getUnAvailableSlots() {
+    public Map<String, List<BookingSlot>> getUnAvailableSlots() {
         return unAvailableSlots;
     }
 
-    public void setUnAvailableSlots(List<BookingSlot> unAvailableSlots) {
+    public void setUnAvailableSlots(Map<String, List<BookingSlot>> unAvailableSlots) {
         this.unAvailableSlots = unAvailableSlots;
     }
 

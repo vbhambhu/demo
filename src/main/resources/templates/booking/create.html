@@ -1,10 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default">
 <body>
-Create new booking here
+<div id="page" ng-controller="bookingForm" layout:fragment="content">
+
+{{formData}}
+
+    <div class="row">
+      <div class="col-md-4 offset-md-4">
+
+
+    <input type="hidden" class="form-control" ng-model="resource_id"/>
+
+    <div class="form-group">
+    <label for="exampleSelect2">Resource</label>
+    <select class="form-control" ng-model="formData.resource_id" ng-change="updateform()">
+    <option ng-repeat="resource in form.resources" value="{{resource.id}}">{{resource.name}}</option>
+    </select>
+    </div>
+
+
+    <div ng-show="form.selectedResource.projectRequired" class="form-group">
+    <label for="exampleSelect2">Project</label>
+    <select class="form-control" ng-model="formData.project_id">
+    <option ng-repeat="project in form.projects" value="{{project.id}}">{{project.name}}</option>
+    </select>
+    </div>
+
+
+
+
+        <div class="form-group">
+            <label for="date">When</label>
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="formData.bookingDate" ng-blur="updateform()">
+                <span class="input-group-addon" id="basic-addon2"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+            </div>
+        </div>
+
+
+
+
+
+    <div ng-show="!form.selectedResource.availableSlots">
+
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group" ng-class="formData.to < formData.from ? 'has-danger' : ''" >
+
+
+                <label for="from_date" class="form-control-label">From</label>
+                <select class="form-control" ng-model="formData.from">
+                    <option ng-repeat="(key, value) in times" value="{{key}}">{{value}}</option>
+                </select>
+
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group"  ng-class="formData.to < formData.from ? 'has-danger' : ''" >
+                <label for="to_date" class="form-control-label">To</label>
+                <select class="form-control" ng-model="formData.to" >
+                                    <option ng-repeat="(key, value) in times" value="{{key}}">{{value}}</option>
+                                </select>
+            </div>
+        </div>
+    </div>
+
+   <small class="form-text text-muted text-danger" ng-if="formData.to < formData.from">
+    "From" time can not be greater then "To" time.
+    </small>
+
+    </div>
+
+
+    <div class="form-group" ng-show="form.selectedResource.availableSlots">
+
+            <label for="exampleSelect2">Slot</label>
+            <select class="form-control">
+            <option ng-repeat="slot in form.slots"">{{slot.from}} to {{slot.to}}</option>
+            </select>
+
+    </div>
+
+    <div class="form-group">
+        <label for="exampleTextarea">Note</label>
+        <textarea class="form-control" ng-model="formData.notes" rows="3"></textarea>
+      </div>
+
+
+    <input type="button" class="btn btn-success" value="Book" />
+
+
+	</div>
+	</div>
+
+
+
+
+
+
+
+
+</div>
 </body>
 </html>

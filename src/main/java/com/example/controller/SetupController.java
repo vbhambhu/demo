@@ -1,4 +1,4 @@
-package com.example;
+package com.example.controller;
 
 import com.example.entity.Project;
 import com.example.entity.Resource;
@@ -49,7 +49,7 @@ public class SetupController {
         res.setName("Meeting room 1");
         mongoOperation.save(res);
 
-        for(int i=2; i<10; i++){
+        for(int i=2; i<6; i++){
             res = new Resource();
             res.setName("Resource " + i);
             mongoOperation.save(res);
@@ -63,7 +63,7 @@ public class SetupController {
 
         for(int i=2; i<6; i++){
             project = new Project();
-            project.setName("Resource " + i);
+            project.setName("Project " + i);
             mongoOperation.save(project);
         }
 
